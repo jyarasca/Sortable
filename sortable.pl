@@ -33,6 +33,7 @@ close (LISTINGS);
 
 open (OUTPUT, '> output.txt')
 	or die("Can't open $output_filename: $!\n");
+binmode(OUTPUT, ":utf8");
 foreach my $p_item (@products) {
 	my $p_manufacturer = $p_item->{"manufacturer"};
 	my $p_model = $p_item->{"model"};
